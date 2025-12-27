@@ -6,8 +6,8 @@ A learning tool for developers to compare syntax across programming languages us
 
 The Code Comparison Project is an interactive website that helps users learn a new programming language by comparing it to a language they already know. Using `<code>` and `<pre>` tags along with Prism.js for syntax highlighting, the site allows users to visually scan differences and similarities between languages.
 
-> **Note (as of 12/27/2025)**:
-> The HTML content for this project is currently hard-coded. This version is primarily focused on layout and styling. Dynamic generation of code sections and comparisons will be added later using JavaScript and data files (such as JSON). Anyone reviewing the project at this stage will see the visual design but not the full functionality.
+> **_Note (as of 12/27/2025)_**:
+> _The HTML content for this project is currently hard-coded. This version is primarily focused on layout and styling. Dynamic generation of code sections and comparisons will be added later using JavaScript and data files (such as JSON). Anyone reviewing the project at this stage will see the visual design but not the full functionality._
 
 ## Features
 
@@ -52,6 +52,10 @@ The Code Comparison Project is an interactive website that helps users learn a n
 - Only `<` and `&` need escaping when rendering dynamic code blocks. Quotes and > are safe in text nodes.
 - Default light background ensures readability with Prism’s dark inline code backgrounds.
 
+## Contributing
+
+Contributions are welcome! If you'd like to help improve this project, please read our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on how to get started, our workflow, and code style expectations.
+
 ## License
 
-This project is open source and free to use for educational purposes.
+This project is licensed under the [MIT License](./LICENSE). This project is open source and free to use for educational purposes.
