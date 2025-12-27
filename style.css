@@ -1,0 +1,196 @@
+/* 
+  1. Resets, :root, and @font-face 
+  2. Global styles
+  3. ???
+  4. Mobile first media queries
+*/
+
+/* 1. Resets, :root, and @font-face  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+blockquote,
+figure,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+:root {
+  --white: #fff;
+  --dark-gray: #222;
+  --text: #333;
+  --primary: hsl(146deg 40% 37%);
+  --primary-hi-lite: hsl(145deg 70% 35%);
+  --primary-dark-1: hsl(146deg 29% 30%);
+  --primary-dark-2: hsl(146deg 20% 20%);
+  --primary-dark-3: hsl(146deg 15% 15%);
+  --primary-muted-1: hsl(146deg 20% 60%);
+  --primary-muted-2: hsl(146deg 20% 80%);
+  --primary-muted-3: hsl(146deg 15% 94%);
+  --accent: hsl(43deg 63% 47%);
+  --accent-3: hsl(43deg 75% 55%);
+  --accent-5: hsl(43deg 100% 55%);
+  --link-hover: hsl(43deg 97% 30%);
+  --red: #af0000;
+}
+
+/* 2. Global styles */
+body {
+  margin: 0;
+  font-size: 1.125rem;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.4;
+  background-color: hsl(210, 80%, 97%);
+}
+
+/* main {
+
+} */
+
+h1,
+h2,
+h3 {
+  font-optical-sizing: auto;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+::selection {
+  color: var(--white);
+  background-color: var(--primary-dark-2);
+}
+
+/* Header, headings, container */
+header {
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--primary-muted-3);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 2rem 0 1rem;
+  padding: 0 1rem;
+}
+
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0 0.75rem;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: ui-monospace, 'Courier New', Courier, 'Lucida Console', Consolas, Monaco, 'Lucida Sans Typewriter', monospace;
+  font-size: 1em;
+}
+
+code,
+pre {
+  font-weight: 600;
+  color: #555;
+}
+
+ol {
+  padding: 0 0.5rem 0 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Components */
+.wrapper {
+  width: 97%;
+  margin: 0 auto 2rem;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-flex {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid-3 > * {
+  border: 1px solid #888;
+  padding: 1rem;
+}
+
+/* Home page form */
+.select-row {
+  display: flex;
+  gap: 1rem;
+  /* space between selects */
+  flex-wrap: wrap;
+  /* wrap on smaller screens */
+}
+
+.form-group {
+  flex: 1;
+  /* equal width */
+  min-width: 180px;
+  /* avoid being too small on mobile */
+}
+
+select {
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+
+select[multiple] {
+  min-height: 4.5rem;
+  /* show 2-3 rows */
+  overflow-y: auto;
+}
