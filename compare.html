@@ -79,7 +79,7 @@
           <li><code class="language-js">`Hello ${name}`</code></li>
           <li><code class="language-js">str.length</code></li>
           <li><code class="language-js">str[i]</code></li>
-          <li><code class="language-js">str + str | str1.concat(str2)</code></li>
+          <li><code class="language-js">str + str2 | str.concat(str2)</code></li>
           <li><code class="language-js">str.charCodeAt(i)</code></li>
           <li><code class="language-js">str.startsWith(sub)</code></li>
           <li><code class="language-js">str.endsWith(sub)</code></li>
@@ -112,7 +112,7 @@
           <li><code class="language-php">"Hello {$name}"</code></li>
           <li><code class="language-php">strlen($str)</code></li>
           <li><code class="language-php">$str[$i]</code></li>
-          <li><code class="language-php">$str . $str, "str {$var}"</code></li>
+          <li><code class="language-php">$str . $str2</code></li>
           <li><code class="language-php">ord($str[0])</code></li>
           <li><code class="language-php">str_starts_with($str, $char)</code></li>
           <li><code class="language-php">str_ends_with($str, $char)</code></li>
@@ -131,7 +131,8 @@
           <li><code class="language-php">substr_count($str, $substr)</code></li>
         </ol>
         <p>Others: preg_match_all, number_format, <code class="language-php">$matches</code> is an output param/arg,
-          str_split($str, int)</p>
+          <code class="language-php">str_split($str, int)</code>
+        </p>
       </div>
       <div class="secondary">
         <h2>Python</h2>
@@ -145,7 +146,7 @@
           <li><code class="language-py">f"Hello {name}"</code></li>
           <li><code class="language-py">len(string)</code></li>
           <li><code class="language-py">string[index]</code></li>
-          <li><code class="language-py">str + str, or f-string</code></li>
+          <li><code class="language-py">string + string2</code></li>
           <li><code class="language-py">ord(char)</code></li>
           <li><code class="language-py">txt.startswith(char_or_substr)</code></li>
           <li><code class="language-py">txt.endswith(char_or_substr)</code></li>
@@ -153,7 +154,7 @@
           <li><code class="language-py">txt.find(char_or_substr)</code></li>
           <li><code class="language-py">string[start:end]</code></li>
           <li><code class="language-py">txt.split(sep)</code></li>
-          <li><code class="language-py"></code></li>
+          <li></li>
           <li><code class="language-py">str * num</code></li>
           <li><code class="language-py">txt.replace(orig, replace)</code></li>
           <li><code class="language-py">string[start:end]</code></li>
@@ -238,25 +239,25 @@
           <li><code class="language-py">len(list_name)</code></li>
           <li><code class="language-py">list[i]</code></li>
           <li><code class="language-py">sep.join(list_of_strings)</code></li>
-          <li><code class="language-py">arr1 + arr2</code></li>
-          <li><code class="language-py">all(cb(x) for x in arr)</code></li>
-          <li><code class="language-py">any(cb(x) for x in arr)</code></li>
-          <li><code class="language-py">[x for x in arr if cb(x)]</code></li>
-          <li><!-- next((x for x in arr if cb(x)), None) -->-</li>
-          <li><!-- next((i for i,x in enumerate(arr) if cb(x)), -1) -->-</li>
-          <li><code class="language-py">item in arr</code></li>
-          <li><code class="language-py">arr.find(item)</code></li>
+          <li><code class="language-py">list1 + list2</code></li>
+          <li><code class="language-py">all(cb(x) for x in list)</code></li>
+          <li><code class="language-py">any(cb(x) for x in list)</code></li>
+          <li><code class="language-py">[x for x in list if cb(x)]</code></li>
+          <li><!-- next((x for x in list if cb(x)), None) -->-</li>
+          <li><!-- next((i for i,x in enumerate(list) if cb(x)), -1) -->-</li>
+          <li><code class="language-py">item in list</code></li>
+          <li><code class="language-py">list.find(item)</code></li>
           <li>-</li>
-          <li><code class="language-py">[cb(x) for x in arr]</code></li>
+          <li><code class="language-py">[cb(x) for x in list]</code></li>
           <li><code class="language-py">list.append(val)</code></li>
-          <li><code class="language-py">arr.insert(0, item)</code></li>
+          <li><code class="language-py">list.insert(0, item)</code></li>
           <li><code class="language-py">list.pop(i)</code></li>
           <li><code class="language-py">list.pop(0)</code></li>
           <li>-</li>
-          <li><code class="language-py">arr.reverse()</code></li>
-          <li><code class="language-py">arr.sort()</code></li>
-          <li><code class="language-py">arr[start:end]</code></li>
-          <li><code class="language-py">arr[start:end] = new_items</code></li>
+          <li><code class="language-py">list.reverse()</code></li>
+          <li><code class="language-py">list.sort()</code></li>
+          <li><code class="language-py">list[start:end]</code></li>
+          <li><code class="language-py">list[start:end] = new_items</code></li>
           <li><code class="language-py">list(iterable)</code></li>
         </ol>
         <p>Others: </p>
@@ -288,8 +289,8 @@
         <ol>
           <li><code class="language-php">min($a, $b)</code></li>
           <li><code class="language-php">max($a, $b)</code></li>
-          <li><code class="language-php">rand(1, 6)</code></li>
           <li>-</li>
+          <li><code class="language-php">rand(1, 6)</code></li>
           <li><code class="language-php">sqrt($n)</code></li>
           <li><code class="language-php">pow($a, $b)</code></li>
           <li><code class="language-php">intval($str)</code></li>
@@ -443,7 +444,7 @@ for (const item of arr) {
   // code
 }
 
-for (const val in obj) {
+for (const key in obj) {
   // code
 }
 
@@ -453,9 +454,9 @@ while (num &lt; max) {
   num++
 }
 
-arr.forEach((item, i) =>) {
+arr.foreach((item, i) => {
   // code
-}</code>
+})</code>
         </pre>
       </div>
       <div class="secondary">
@@ -481,7 +482,7 @@ while ($num &lt; $max) {
 }
 
 foreach ($arr as $i => $item) {
-    // code
+  // code
 }</code>
         </pre>
       </div>
@@ -504,7 +505,7 @@ for key in obj:
 num = 0
 while num &lt; max: 
   # code 
-  num +=1
+  num += 1
 
   
 for i, item in enumerate(arr):
