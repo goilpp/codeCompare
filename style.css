@@ -168,29 +168,53 @@ ol {
 }
 
 /* Home page form */
-.select-row {
+.language-form {
   display: flex;
-  gap: 1rem;
-  /* space between selects */
-  flex-wrap: wrap;
-  /* wrap on smaller screens */
+  align-items: flex-end;
+  gap: 1.5rem;
+
+  padding: 0.75rem 1rem;
+  background: hsl(210 40% 97%);
+  border-radius: 0.5rem;
+
+  font-size: 0.9rem;
+  border: 1px solid black;
 }
 
-.form-group {
-  flex: 1;
-  /* equal width */
-  min-width: 180px;
-  /* avoid being too small on mobile */
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.check {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.form-group legend {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
 }
 
 select {
-  width: 100%;
-  padding: 0.4rem;
-  font-size: 1rem;
+  padding: 0.35rem 0.5rem;
+  font-size: inherit;
 }
 
-select[multiple] {
-  min-height: 4.5rem;
-  /* show 2-3 rows */
-  overflow-y: auto;
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 400;
+}
+
+button {
+  padding: 0.45rem 0.75rem;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
