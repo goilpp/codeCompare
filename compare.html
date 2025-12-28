@@ -28,57 +28,102 @@
       <fieldset class="form-group select">
         <label for="primaryLang">Primary language</label>
         <select id="primaryLang" name="primaryLang" required>
-          <option value="">— Select —</option>
+          <option value="">--- Select ---</option>
           <option value="js">JavaScript</option>
           <option value="php">PHP</option>
           <option value="python">Python</option>
+          <option value="csharp">C#</option>
         </select>
       </fieldset>
 
       <fieldset class="form-group check">
         <legend>Compare with</legend>
 
-        <label class="checkbox">
-          <input type="checkbox" name="comparisonLangs" value="js">
-          JavaScript
-        </label>
+        <input type="checkbox" name="comparisonLangs" value="JavaScript" id="js">
+        <label for="js" class="checkbox">JavaScript</label>
 
-        <label class="checkbox">
-          <input type="checkbox" name="comparisonLangs" value="php">
-          PHP
-        </label>
+        <input type="checkbox" name="comparisonLangs" value="PHP" id="php">
+        <label for="php" class="checkbox">PHP</label>
 
-        <label class="checkbox">
-          <input type="checkbox" name="comparisonLangs" value="python">
-          Python
-        </label>
+        <input type="checkbox" name="comparisonLangs" value="Python" id="python">
+        <label for="python" class="checkbox">Python</label>
 
-        <label class="checkbox">
-          <input type="checkbox" name="comparisonLangs" value="csharp">
-          C#
-        </label>
+        <input type="checkbox" name="comparisonLangs" value="C#" id="csharp">
+        <label for="csharp" class="checkbox">C#</label>
       </fieldset>
 
-      <button type="submit" disabled>Compare</button>
+      <button type="submit">Compare</button>
     </form>
 
 
-    <h1>Compare and constrast <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>Python</strong></h1>
+    <h1></h1>
 
-    <!-- VARIABLES & NUMBERS -->
+    <!-- VARIABLES -->
     <div class="grid-3">
       <div class="primary">
         <h2>JavaScript</h2>
-        <h3>Variables</h3>
+        <h3>Variables + Miscellaneous</h3>
 
         <ul>
           <li><code class="language-js">let varName = value;</code></li>
           <li><code class="language-js">const varName = value;</code></li>
+          <li><code class="language-js">const PHI = 1.618</code></li>
           <li><code class="language-js">typeof</code></li>
+          <li><code class="language-js">console.log()</code></li>
+          <li>-</li>
+          <li><code class="language-js">string</code></li>
+          <li><code class="language-js">number</code></li>
+          <li><code class="language-js">number</code></li>
+          <li><code class="language-js">boolean</code></li>
+          <li><code class="language-js">null</code></li>
         </ul>
+
+      </div>
+      <div class="secondary">
+        <h2>PHP</h2>
+        <h3>Variables + Miscellaneous</h3>
+        <ul>
+          <li><code class="language-php">$varName = value;</code></li>
+          <li>-</li>
+          <li><code class="language-php">define('PHI', 1.618);</code></li>
+          <li><code class="language-php">gettype()</code></li>
+          <li><code class="language-php">echo</code></li>
+          <li><code class="language-php">var_dump()</code></li>
+          <li><code class="language-php">string</code></li>
+          <li><code class="language-php">int</code></li>
+          <li><code class="language-php">float</code></li>
+          <li><code class="language-php">bool</code></li>
+          <li><code class="language-php">null</code></li>
+        </ul>
+      </div>
+      <div class="secondary">
+        <h2>Python</h2>
+        <h3>Variables + Miscellaneous</h3>
+        <ul>
+          <li><code class="language-py">var_name = value</code></li>
+          <li>-</li>
+          <li><code class="language-py">PHI = 1.618</code></li>
+          <li><code class="language-py">type()</code></li>
+          <li><code class="language-py">print()</code></li>
+          <li>-</li>
+          <li><code class="language-py">str</code></li>
+          <li><code class="language-py">int</code></li>
+          <li><code class="language-py">float</code></li>
+          <li><code class="language-py">bool</code></li>
+          <li><code class="language-py">None</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NUMBERS -->
+    <div class="grid-3">
+      <div class="primary">
+        <h2>JavaScript</h2>
 
         <h3>Number methods</h3>
         <ol>
+          <li><code class="language-js">Infinity</code></li>
+          <li><code class="language-js">NaN</code></li>
           <li><code class="language-js">Math.min(...nums)</code></li>
           <li><code class="language-js">Math.max(...nums)</code></li>
           <li><code class="language-js">Math.floor(x)</code></li>
@@ -93,16 +138,11 @@
       </div>
       <div class="secondary">
         <h2>PHP</h2>
-        <h3>Variables</h3>
-        <ul>
-          <li><code class="language-php">$varName = value;</code></li>
-          <li>-</li>
-          <li><code class="language-php">gettype() | var_dump()</code></li>
-        </ul>
-
         <h3>Number functions</h3>
         <!-- https://www.php.net/manual/en/ref.array.php -->
         <ol>
+          <li><code class="language-php">INF</code></li>
+          <li>-</li>
           <li><code class="language-php">min($a, $b)</code></li>
           <li><code class="language-php">max($a, $b)</code></li>
           <li>-</li>
@@ -117,15 +157,10 @@
       </div>
       <div class="secondary">
         <h2>Python</h2>
-        <h3>Variables</h3>
-        <ul>
-          <li><code class="language-py">var_name = value</code></li>
-          <li>-</li>
-          <li><code class="language-py">type()</code></li>
-        </ul>
-
         <h3>Number methods</h3>
         <ol>
+          <li><code class="language-py">float('inf')</code></li>
+          <li><code class="language-py">float('nan')</code></li>
           <li><code class="language-py">min(a, b)</code></li>
           <li><code class="language-py">max(a, b)</code></li>
           <li><code class="language-py">math.floor(n)</code></li>
@@ -382,6 +417,7 @@
     </div>
 
     <!-- CONDITIONALS -->
+    <!-- undefined is something you test, not something you assign -->
     <div class="grid-3">
       <div class="primary">
         <h2>JavaScript</h2>
@@ -413,11 +449,14 @@ switch (value) {
 compare ? ifTrue : ifFalse
 
 // other syntax:
+true
+false
 a && b
 a || b
 !x
 x ?? y</code>
         </pre>
+        <p>Falsy values in JavaScript: false, 0, -0, 0n, "", null, undefined, NaN</p>
       </div>
       <div class="secondary">
         <h2>PHP</h2>
@@ -450,11 +489,14 @@ switch ($value) {
 $compare ? $ifTrue : $ifFalse;
 
 // other syntax:
+true
+false
 $a && $b
 $a || $b
 !$x
 $x ?? $y</code>
         </pre>
+        <p>Falsy values in PHP: false, 0, 0.0, "", "0", null, [], undefined variables</p>
       </div>
       <div class="secondary">
         <h2>Python</h2>
@@ -486,11 +528,14 @@ match value:
 ifTrue if condition else ifFalse
 
 ## other syntax:
+True
+False
 a and b
 a or b
 not x
 x if x is not None else y</code>
         </pre>
+        <p>Falsy values in Python: False, 0, 0.0, "", None, [], {}, set()</p>
       </div>
     </div>
 
@@ -621,6 +666,7 @@ func = lambda param: param</code>
 
   <footer class="wrapper">Footer text here</footer>
   <script src="./js/prism.js"></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
