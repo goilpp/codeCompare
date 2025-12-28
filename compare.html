@@ -65,15 +65,85 @@
 
     <h1>Compare and constrast <strong>JavaScript</strong>, <strong>PHP</strong>, and <strong>Python</strong></h1>
 
-    <!-- VARIABLES & STRINGS -->
+    <!-- VARIABLES & NUMBERS -->
     <div class="grid-3">
       <div class="primary">
         <h2>JavaScript</h2>
         <h3>Variables</h3>
-        <p>- <code class="language-js">typeof</code></p>
-        <p>- <code class="language-js">let varName = value;</code></p>
-        <p>- <code class="language-js">const varName = value;</code></p>
 
+        <ul>
+          <li><code class="language-js">let varName = value;</code></li>
+          <li><code class="language-js">const varName = value;</code></li>
+          <li><code class="language-js">typeof</code></li>
+        </ul>
+
+        <h3>Number methods</h3>
+        <ol>
+          <li><code class="language-js">Math.min(...nums)</code></li>
+          <li><code class="language-js">Math.max(...nums)</code></li>
+          <li><code class="language-js">Math.floor(x)</code></li>
+          <li><code class="language-js">Math.random()</code></li>
+          <li><code class="language-js">Math.sqrt(x)</code></li>
+          <li><code class="language-js">Math.pow(base, exp)</code></li>
+          <li><code class="language-js">parseInt(str, radix)</code></li>
+          <li><code class="language-js">parseFloat(string)</code></li>
+          <li><code class="language-js">Number(str)</code></li>
+        </ol>
+        <p>Others: </p>
+      </div>
+      <div class="secondary">
+        <h2>PHP</h2>
+        <h3>Variables</h3>
+        <ul>
+          <li><code class="language-php">$varName = value;</code></li>
+          <li>-</li>
+          <li><code class="language-php">gettype() | var_dump()</code></li>
+        </ul>
+
+        <h3>Number functions</h3>
+        <!-- https://www.php.net/manual/en/ref.array.php -->
+        <ol>
+          <li><code class="language-php">min($a, $b)</code></li>
+          <li><code class="language-php">max($a, $b)</code></li>
+          <li>-</li>
+          <li><code class="language-php">rand(1, 6)</code></li>
+          <li><code class="language-php">sqrt($n)</code></li>
+          <li><code class="language-php">pow($a, $b)</code></li>
+          <li><code class="language-php">intval($str)</code></li>
+          <li><code class="language-php">floatval($str)</code></li>
+          <li>-</li>
+        </ol>
+        <p>Others: </p>
+      </div>
+      <div class="secondary">
+        <h2>Python</h2>
+        <h3>Variables</h3>
+        <ul>
+          <li><code class="language-py">var_name = value</code></li>
+          <li>-</li>
+          <li><code class="language-py">type()</code></li>
+        </ul>
+
+        <h3>Number methods</h3>
+        <ol>
+          <li><code class="language-py">min(a, b)</code></li>
+          <li><code class="language-py">max(a, b)</code></li>
+          <li><code class="language-py">math.floor(n)</code></li>
+          <li><code class="language-py">import random | random.random()</code></li>
+          <li><code class="language-py">import math | math.sqrt(n)</code></li>
+          <li><code class="language-py">pow(a, b) | a ** b</code></li>
+          <li><code class="language-py">int(str)</code></li>
+          <li><code class="language-py">float(str)</code></li>
+          <li>-</li>
+        </ol>
+        <p>Others: </p>
+      </div>
+    </div>
+
+    <!-- STRINGS -->
+    <div class="grid-3">
+      <div class="primary">
+        <h2>JavaScript</h2>
         <h3>String methods</h3>
         <ol>
           <li><code class="language-js">`Hello ${name}`</code></li>
@@ -102,10 +172,6 @@
       </div>
       <div class="secondary">
         <h2>PHP</h2>
-        <h3>Variables</h3>
-        <p>- <code class="language-php">gettype() | var_dump()</code></p>
-        <p>- <code class="language-php">$varName = value;</code></p>
-        <p>-</p>
 
         <h3>String functions</h3>
         <ol>
@@ -136,10 +202,6 @@
       </div>
       <div class="secondary">
         <h2>Python</h2>
-        <h3>Variables</h3>
-        <p>- <code class="language-py">type()</code></p>
-        <p>- <code class="language-py">var_name = value</code></p>
-        <p>-</p>
 
         <h3>String methods</h3>
         <ol>
@@ -259,59 +321,6 @@
           <li><code class="language-py">list[start:end]</code></li>
           <li><code class="language-py">list[start:end] = new_items</code></li>
           <li><code class="language-py">list(iterable)</code></li>
-        </ol>
-        <p>Others: </p>
-      </div>
-    </div>
-
-    <!-- NUMBERS -->
-    <div class="grid-3">
-      <div class="primary">
-        <h2>JavaScript</h2>
-        <h3>Number methods</h3>
-        <ol>
-          <li><code class="language-js">Math.min(...nums)</code></li>
-          <li><code class="language-js">Math.max(...nums)</code></li>
-          <li><code class="language-js">Math.floor(x)</code></li>
-          <li><code class="language-js">Math.random()</code></li>
-          <li><code class="language-js">Math.sqrt(x)</code></li>
-          <li><code class="language-js">Math.pow(base, exp)</code></li>
-          <li><code class="language-js">parseInt(str, radix)</code></li>
-          <li><code class="language-js">parseFloat(string)</code></li>
-          <li><code class="language-js">Number(str)</code></li>
-        </ol>
-        <p>Others: </p>
-      </div>
-      <div class="secondary">
-        <h2>PHP</h2>
-        <h3>Number functions</h3>
-        <!-- https://www.php.net/manual/en/ref.array.php -->
-        <ol>
-          <li><code class="language-php">min($a, $b)</code></li>
-          <li><code class="language-php">max($a, $b)</code></li>
-          <li>-</li>
-          <li><code class="language-php">rand(1, 6)</code></li>
-          <li><code class="language-php">sqrt($n)</code></li>
-          <li><code class="language-php">pow($a, $b)</code></li>
-          <li><code class="language-php">intval($str)</code></li>
-          <li><code class="language-php">floatval($str)</code></li>
-          <li>-</li>
-        </ol>
-        <p>Others: </p>
-      </div>
-      <div class="secondary">
-        <h2>Python</h2>
-        <h3>Number methods</h3>
-        <ol>
-          <li><code class="language-py">min(a, b)</code></li>
-          <li><code class="language-py">max(a, b)</code></li>
-          <li><code class="language-py">math.floor(n)</code></li>
-          <li><code class="language-py">import random | random.random()</code></li>
-          <li><code class="language-py">import math | math.sqrt(n)</code></li>
-          <li><code class="language-py">pow(a, b) | a ** b</code></li>
-          <li><code class="language-py">int(str)</code></li>
-          <li><code class="language-py">float(str)</code></li>
-          <li>-</li>
         </ol>
         <p>Others: </p>
       </div>

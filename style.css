@@ -132,7 +132,9 @@ pre {
   color: #555;
 }
 
-ol {
+ol,
+.primary ul,
+.secondary ul {
   padding: 0 0.5rem 0 1rem;
   margin-top: 0.5rem;
 }
