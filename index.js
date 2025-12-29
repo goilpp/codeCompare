@@ -34,6 +34,15 @@ function initHomePage() {
   }
 }
 
+function createSection(sectionId, h3Text, tag) {
+  // 1. sectionId = surround each "section" tag with section#id
+  // 2. tag = ul, ol, or pre
+  // 3. if ol or ul also create li
+  // h2 = primary + [checkedLangs]
+  // h3 = h3Text
+  // Content - loop thru vars.js > sectionId
+}
+
 
 /**
  * * EVENT LISTENERS
@@ -42,17 +51,35 @@ function initHomePage() {
 // 1. Load localStorage objects if they exist
 document.addEventListener('DOMContentLoaded', initHomePage);
 
+// Select list 
+select.addEventListener('change', e => {
+  const selectedvalue = select.options[select.selectedIndex].value;
+  console.log(selectedvalue)
+
+  const boxes = document.querySelectorAll('input[type="checkbox"]');
+  console.log(boxes)
+
+  const disabled = [...boxes].filter(box => box.id === selectedvalue).map(box => box.disabled = true);
+  const primarySelection = [...boxes].filter(box => box.id === selectedvalue)
+  console.log(primarySelection)
+
+  // I need to somehow maintain the disabled attribute and only remove it when the user picks a different primary language or clears LS
+})
+
 // 2. form listener
 languageForm.addEventListener('submit', e => {
   e.preventDefault();
 
   // Get the text for the selected primary language - save to LS
   const selectedText = select.options[select.selectedIndex].text;
-  // const selectedValue = select.value;
+  
   setLocalStorage('selection', select.selectedIndex)
+  setLocalStorage('primary', selectedText)
 
   // Get the checked boxes and save to LS
+  
   const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  
   const checkedValues = [...checkedBoxes].map(box => box.value);
   setLocalStorage('checkedLangs', checkedValues)
 

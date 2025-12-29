@@ -48,7 +48,7 @@
         <input type="checkbox" name="comparisonLangs" value="Python" id="python">
         <label for="python" class="checkbox">Python</label>
 
-        <input type="checkbox" name="comparisonLangs" value="C#" id="csharp">
+        <input type="checkbox" name="comparisonLangs" value="CSharp" id="csharp">
         <label for="csharp" class="checkbox">C#</label>
       </fieldset>
 
@@ -58,12 +58,14 @@
     <h1></h1>
 
     <!-- TEST -->
-    <div class="grid-3">
-      <div class="primary">
-        <h2>JavaScript</h2>
-        <h3>Variables + Miscellaneous</h3>
-        <ul class="jsVars">
-          <!-- I need to:
+    <!-- I NEED A CONTAINER FOR EVERYTHING TO GO INTO - EACH SECTION -->
+    <section id="vars">
+      <div class="grid-3">
+        <div class="primary">
+          <h2>JavaScript</h2>
+          <h3>Variables + Miscellaneous</h3>
+          <ul class="jsVars">
+            <!-- I need to:
             1. grab each ul
             2. I need to export the js variables and import into index.js
             3. to do that I need to add type="module"
@@ -76,21 +78,22 @@
             - div.primary or div.secondary
             - h2 + text, h3 + text, and a ul or ol
           -->
-        </ul>
-      </div>
+          </ul>
+        </div>
 
-      <div class="secondary">
-        <h2>PHP</h2>
-        <h3>Variables + Miscellaneous</h3>
-        <ul class="phpVars"></ul>
-      </div>
+        <div class="secondary">
+          <h2>PHP</h2>
+          <h3>Variables + Miscellaneous</h3>
+          <ul class="phpVars"></ul>
+        </div>
 
-      <div class="secondary">
-        <h2>Python</h2>
-        <h3>Variables + Miscellaneous</h3>
-        <ul class="pyVars"></ul>
+        <div class="secondary">
+          <h2>Python</h2>
+          <h3>Variables + Miscellaneous</h3>
+          <ul class="pyVars"></ul>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- VARIABLES -->
     <div class="grid-3">
@@ -99,17 +102,17 @@
         <h3>Variables + Miscellaneous</h3>
 
         <ul>
-          <li><code class="language-js">let varName = value;</code></li>
-          <li><code class="language-js">const varName = value;</code></li>
-          <li><code class="language-js">const PHI = 1.618</code></li>
-          <li><code class="language-js">typeof</code></li>
-          <li><code class="language-js">console.log()</code></li>
+          <li><code class="custom">let varName = value;</code></li>
+          <li><code class="custom">const varName = value;</code></li>
+          <li><code class="custom">const PHI = 1.618</code></li>
+          <li><code class="custom">typeof</code></li>
+          <li><code class="custom">console.log()</code></li>
           <li>-</li>
-          <li><code class="language-js">string</code></li>
-          <li><code class="language-js">number</code></li>
-          <li><code class="language-js">number</code></li>
-          <li><code class="language-js">boolean</code></li>
-          <li><code class="language-js">null</code></li>
+          <li><code class="custom">string</code></li>
+          <li><code class="custom">number</code></li>
+          <li><code class="custom">number</code></li>
+          <li><code class="custom">boolean</code></li>
+          <li><code class="custom">null</code></li>
         </ul>
         <p>Special ones: new Set() for unique, </p>
       </div>
@@ -117,17 +120,17 @@
         <h2>PHP</h2>
         <h3>Variables + Miscellaneous</h3>
         <ul>
-          <li><code class="language-php">$varName = value;</code></li>
+          <li><code class="custom">$varName = value;</code></li>
           <li>-</li>
-          <li><code class="language-php">define('PHI', 1.618);</code></li>
-          <li><code class="language-php">gettype()</code></li>
-          <li><code class="language-php">echo</code></li>
-          <li><code class="language-php">var_dump()</code></li>
-          <li><code class="language-php">string</code></li>
-          <li><code class="language-php">int</code></li>
-          <li><code class="language-php">float</code></li>
-          <li><code class="language-php">bool</code></li>
-          <li><code class="language-php">null</code></li>
+          <li><code class="custom">define('PHI', 1.618);</code></li>
+          <li><code class="custom">gettype()</code></li>
+          <li><code class="custom">echo</code></li>
+          <li><code class="custom">var_dump()</code></li>
+          <li><code class="custom">string</code></li>
+          <li><code class="custom">int</code></li>
+          <li><code class="custom">float</code></li>
+          <li><code class="custom">bool</code></li>
+          <li><code class="custom">null</code></li>
         </ul>
         <p>Special ones:</p>
       </div>
@@ -135,17 +138,17 @@
         <h2>Python</h2>
         <h3>Variables + Miscellaneous</h3>
         <ul>
-          <li><code class="language-py">var_name = value</code></li>
+          <li><code class="custom">var_name = value</code></li>
           <li>-</li>
-          <li><code class="language-py">PHI = 1.618</code></li>
-          <li><code class="language-py">type()</code></li>
-          <li><code class="language-py">print()</code></li>
+          <li><code class="custom">PHI = 1.618</code></li>
+          <li><code class="custom">type()</code></li>
+          <li><code class="custom">print()</code></li>
           <li>-</li>
-          <li><code class="language-py">str</code></li>
-          <li><code class="language-py">int</code></li>
-          <li><code class="language-py">float</code></li>
-          <li><code class="language-py">bool</code></li>
-          <li><code class="language-py">None</code></li>
+          <li><code class="custom">str</code></li>
+          <li><code class="custom">int</code></li>
+          <li><code class="custom">float</code></li>
+          <li><code class="custom">bool</code></li>
+          <li><code class="custom">None</code></li>
         </ul>
         <p>Special ones: input()</p>
       </div>
@@ -158,19 +161,20 @@
 
         <h3>Number methods</h3>
         <ol>
-          <li><code class="language-js">Infinity</code></li>
-          <li><code class="language-js">NaN</code></li>
-          <li><code class="language-js">Math.min(...nums)</code></li>
-          <li><code class="language-js">Math.max(...nums)</code></li>
-          <li><code class="language-js">Math.floor(x)</code></li>
-          <li><code class="language-js">Math.random()</code></li>
-          <li><code class="language-js">Math.sqrt(x)</code></li>
-          <li><code class="language-js">Math.pow(base, exp)</code></li>
-          <li><code class="language-js">parseInt(str, radix)</code></li>
-          <li><code class="language-js">parseFloat(string)</code></li>
-          <li><code class="language-js">Number(str)</code></li>
-          <li><code class="language-js">+ - * / % ** ++ --</code></li>
-          <li><code class="language-js">+= -= *= /=</code></li>
+          <li><code class="custom">Infinity</code></li>
+          <li><code class="custom">NaN</code></li>
+          <li><code class="custom">Math.min(...nums)</code></li>
+          <li><code class="custom">Math.max(...nums)</code></li>
+          <li><code class="custom">Math.floor(x)</code></li>
+          <li><code class="custom">Math.random()</code></li>
+          <li><code class="custom">Math.sqrt(x)</code></li>
+          <li><code class="custom">Math.pow(base, exp)</code></li>
+          <li><code class="custom">parseInt(str, radix)</code></li>
+          <li><code class="custom">parseFloat(string)</code></li>
+          <li><code class="custom">Number(str)</code></li>
+          <li><code class="custom">% ** ++ --</code></li>
+          <li><code class="custom">+= -= *= /=</code></li>
+          <li><code class="custom">num++</code></li>
         </ol>
         <p>Others: </p>
       </div>
@@ -179,19 +183,20 @@
         <h3>Number functions</h3>
         <!-- https://www.php.net/manual/en/ref.array.php -->
         <ol>
-          <li><code class="language-php">INF</code></li>
+          <li><code class="custom">INF</code></li>
           <li>-</li>
-          <li><code class="language-php">min($a, $b)</code></li>
-          <li><code class="language-php">max($a, $b)</code></li>
+          <li><code class="custom">min($a, $b)</code></li>
+          <li><code class="custom">max($a, $b)</code></li>
           <li>-</li>
-          <li><code class="language-php">rand(1, 6)</code></li>
-          <li><code class="language-php">sqrt($n)</code></li>
-          <li><code class="language-php">pow($a, $b)</code></li>
-          <li><code class="language-php">intval($str)</code></li>
-          <li><code class="language-php">floatval($str)</code></li>
+          <li><code class="custom">rand(1, 6)</code></li>
+          <li><code class="custom">sqrt($n)</code></li>
+          <li><code class="custom">pow($a, $b)</code></li>
+          <li><code class="custom">intval($str)</code></li>
+          <li><code class="custom">floatval($str)</code></li>
           <li>-</li>
-          <li><code class="language-php">+ - * / % ** ++ --</code></li>
-          <li><code class="language-php">+= -= *= /=</code></li>
+          <li><code class="custom">% ** ++ --</code></li>
+          <li><code class="custom">+= -= *= /=</code></li>
+          <li><code class="custom">$num++</code></li>
         </ol>
         <p>Others: </p>
       </div>
@@ -199,19 +204,20 @@
         <h2>Python</h2>
         <h3>Number methods</h3>
         <ol>
-          <li><code class="language-py">float('inf')</code></li>
-          <li><code class="language-py">float('nan')</code></li>
-          <li><code class="language-py">min(a, b)</code></li>
-          <li><code class="language-py">max(a, b)</code></li>
-          <li><code class="language-py">math.floor(n)</code></li>
-          <li><code class="language-py">random.random()</code></li>
-          <li><code class="language-py">import math | math.sqrt(n)</code></li>
-          <li><code class="language-py">pow(a, b) | a ** b</code></li>
-          <li><code class="language-py">int(str)</code></li>
-          <li><code class="language-py">float(str)</code></li>
+          <li><code class="custom">float('inf')</code></li>
+          <li><code class="custom">float('nan')</code></li>
+          <li><code class="custom">min(a, b)</code></li>
+          <li><code class="custom">max(a, b)</code></li>
+          <li><code class="custom">math.floor(n)</code></li>
+          <li><code class="custom">random.random()</code></li>
+          <li><code class="custom">import math | math.sqrt(n)</code></li>
+          <li><code class="custom">pow(a, b) | a ** b</code></li>
+          <li><code class="custom">int(str)</code></li>
+          <li><code class="custom">float(str)</code></li>
           <li>-</li>
-          <li><code class="language-py">+ - * / % ** //</code></li>
-          <li><code class="language-py">+= -= *= /=</code></li>
+          <li><code class="custom">% ** //</code></li>
+          <li><code class="custom">+= -= *= /=</code></li>
+          <li><code class="custom">num += 1</code></li>
         </ol>
         <p>Others: </p>
       </div>
@@ -223,24 +229,25 @@
         <h2>JavaScript</h2>
         <h3>String methods</h3>
         <ol>
-          <li><code class="language-js">`Hello ${name}`</code></li>
-          <li><code class="language-js">str.length</code></li>
-          <li><code class="language-js">str[i]</code></li>
-          <li><code class="language-js">str + str2 | str.concat(str2)</code></li>
-          <li><code class="language-js">str.charCodeAt(i)</code></li>
-          <li><code class="language-js">str.startsWith(sub)</code></li>
-          <li><code class="language-js">str.endsWith(sub)</code></li>
-          <li><code class="language-js">str.includes(sub)</code></li>
-          <li><code class="language-js">str.indexOf(sub)</code></li>
-          <li><code class="language-js">str.slice(start, end)</code></li>
-          <li><code class="language-js">str.split(sep)</code></li>
-          <li><code class="language-js">str.match(regex)</code></li>
-          <li><code class="language-js">str.repeat(count)</code></li>
-          <li><code class="language-js">str.replace(regex, replace)</code></li>
-          <li><code class="language-js">str.substring(start, end)</code></li>
-          <li><code class="language-js">str.toLowerCase()</code></li>
-          <li><code class="language-js">str.toUpperCase()</code></li>
-          <li><code class="language-js">str.trim()</code></li>
+          <li><code class="custom">`Hello ${name}`</code></li>
+          <li><code class="custom">str.length</code></li>
+          <li><code class="custom">str[i]</code></li>
+          <li><code class="custom">str + str2</code></li>
+          <li><code class="custom">+=</code></li>
+          <li><code class="custom">str.charCodeAt(i)</code></li>
+          <li><code class="custom">str.startsWith(sub)</code></li>
+          <li><code class="custom">str.endsWith(sub)</code></li>
+          <li><code class="custom">str.includes(sub)</code></li>
+          <li><code class="custom">str.indexOf(sub)</code></li>
+          <li><code class="custom">str.slice(start, end)</code></li>
+          <li><code class="custom">str.split(sep)</code></li>
+          <li><code class="custom">str.match(regex)</code></li>
+          <li><code class="custom">str.repeat(count)</code></li>
+          <li><code class="custom">str.replace(regex, replace)</code></li>
+          <li><code class="custom">str.substring(start, end)</code></li>
+          <li><code class="custom">str.toLowerCase()</code></li>
+          <li><code class="custom">str.toUpperCase()</code></li>
+          <li><code class="custom">str.trim()</code></li>
           <li>-</li>
           <li>-</li>
         </ol>
@@ -252,29 +259,30 @@
 
         <h3>String functions</h3>
         <ol>
-          <li><code class="language-php">"Hello {$name}"</code></li>
-          <li><code class="language-php">strlen($str)</code></li>
-          <li><code class="language-php">$str[$i]</code></li>
-          <li><code class="language-php">$str . $str2</code></li>
-          <li><code class="language-php">ord($str[0])</code></li>
-          <li><code class="language-php">str_starts_with($str, $char)</code></li>
-          <li><code class="language-php">str_ends_with($str, $char)</code></li>
-          <li><code class="language-php">str_contains($str, $substr)</code></li>
-          <li><code class="language-php">strpos($str, $char)</code></li>
-          <li><code class="language-php">substr($str, start, +/-len)</code></li>
-          <li><code class="language-php">explode(sep, $str)</code></li>
-          <li><code class="language-php">preg_match(regex, str, output)</code></li>
-          <li><code class="language-php">str_repeat($str, $num)</code></li>
-          <li><code class="language-php">str_replace($char, "", $str)</code></li>
-          <li><code class="language-php">strstr($str, $char)</code></li>
-          <li><code class="language-php">strtolower($str)</code></li>
-          <li><code class="language-php">strtoupper($str)</code></li>
-          <li><code class="language-php">trim($text)</code></li>
-          <li><code class="language-php">count_chars(string $string)</code></li>
-          <li><code class="language-php">substr_count($str, $substr)</code></li>
+          <li><code class="custom">"Hello {$name}"</code></li>
+          <li><code class="custom">strlen($str)</code></li>
+          <li><code class="custom">$str[$i]</code></li>
+          <li><code class="custom">$str . $str2</code></li>
+          <li><code class="custom">.=</code></li>
+          <li><code class="custom">ord($str[0])</code></li>
+          <li><code class="custom">str_starts_with($str, $char)</code></li>
+          <li><code class="custom">str_ends_with($str, $char)</code></li>
+          <li><code class="custom">str_contains($str, $substr)</code></li>
+          <li><code class="custom">strpos($str, $char)</code></li>
+          <li><code class="custom">substr($str, start, +/-len)</code></li>
+          <li><code class="custom">explode(sep, $str)</code></li>
+          <li><code class="custom">preg_match(regex, str, output)</code></li>
+          <li><code class="custom">str_repeat($str, $num)</code></li>
+          <li><code class="custom">str_replace($char, "", $str)</code></li>
+          <li><code class="custom">strstr($str, $char)</code></li>
+          <li><code class="custom">strtolower($str)</code></li>
+          <li><code class="custom">strtoupper($str)</code></li>
+          <li><code class="custom">trim($text)</code></li>
+          <li><code class="custom">count_chars(string $string)</code></li>
+          <li><code class="custom">substr_count($str, $substr)</code></li>
         </ol>
-        <p>Others: preg_match_all, number_format, <code class="language-php">$matches</code> is an output param/arg,
-          <code class="language-php">str_split($str, int)</code>
+        <p>Others: preg_match_all, number_format, <code class="custom">$matches</code> is an output param/arg,
+          <code class="custom">str_split($str, int)</code>
         </p>
       </div>
       <div class="secondary">
@@ -282,25 +290,26 @@
 
         <h3>String methods</h3>
         <ol>
-          <li><code class="language-py">f"Hello {name}"</code></li>
-          <li><code class="language-py">len(string)</code></li>
-          <li><code class="language-py">string[index]</code></li>
-          <li><code class="language-py">string + string2</code></li>
-          <li><code class="language-py">ord(char)</code></li>
-          <li><code class="language-py">txt.startswith(char_or_substr)</code></li>
-          <li><code class="language-py">txt.endswith(char_or_substr)</code></li>
-          <li><code class="language-py">if char in string</code></li>
-          <li><code class="language-py">txt.find(char_or_substr)</code></li>
-          <li><code class="language-py">string[start:end]</code></li>
-          <li><code class="language-py">list(string)</code></li>
+          <li><code class="custom">f"Hello {name}"</code></li>
+          <li><code class="custom">len(string)</code></li>
+          <li><code class="custom">string[index]</code></li>
+          <li><code class="custom">string + string2</code></li>
+          <li><code class="custom">+=</code></li>
+          <li><code class="custom">ord(char)</code></li>
+          <li><code class="custom">txt.startswith(char_or_substr)</code></li>
+          <li><code class="custom">txt.endswith(char_or_substr)</code></li>
+          <li><code class="custom">if char in string</code></li>
+          <li><code class="custom">txt.find(char_or_substr)</code></li>
+          <li><code class="custom">string[start:end]</code></li>
+          <li><code class="custom">list(string)</code></li>
           <li></li>
-          <li><code class="language-py">str * num</code></li>
-          <li><code class="language-py">txt.replace(orig, replace)</code></li>
-          <li><code class="language-py">string[start:end]</code></li>
-          <li><code class="language-py">txt.lower()</code></li>
-          <li><code class="language-py">txt.upper()</code></li>
-          <li><code class="language-py">txt.strip()</code></li>
-          <li><code class="language-py">txt.count(substr)</code></li>
+          <li><code class="custom">str * num</code></li>
+          <li><code class="custom">txt.replace(orig, replace)</code></li>
+          <li><code class="custom">string[start:end]</code></li>
+          <li><code class="custom">txt.lower()</code></li>
+          <li><code class="custom">txt.upper()</code></li>
+          <li><code class="custom">txt.strip()</code></li>
+          <li><code class="custom">txt.count(substr)</code></li>
           <li>-</li>
         </ol>
         <p>Others: txt.index, isdecimal(), isnumeric(), you need the re module for "match": re.search(regex, str)</p>
@@ -313,99 +322,99 @@
         <h2>JavaScript</h2>
         <h3>Array methods</h3>
         <ol>
-          <li><code class="language-js">arr.length</code></li>
-          <li><code class="language-js">arr.length = 0</code></li>
-          <li><code class="language-js">arr2 = [...arr1]</code></li>
-          <li><code class="language-js">arr[i]</code></li>
-          <li><code class="language-js">arr.join(sep)</code></li>
-          <li><code class="language-js">arr1.concat(arr2)</code></li>
-          <li><code class="language-js">arr.every(boolean test)</code></li>
-          <li><code class="language-js">arr.some(boolean test)</code></li>
-          <li><code class="language-js">arr.filter(cb)</code></li>
-          <li><code class="language-js">arr.find(cb)</code></li>
-          <li><code class="language-js">arr.findIndex(boolean test)</code></li>
-          <li><code class="language-js">arr.includes(item)</code></li>
-          <li><code class="language-js">arr.indexOf(item)</code></li>
-          <li><code class="language-js">arr.forEach((item, i))</code></li>
-          <li><code class="language-js">arr.map((item, i))</code></li>
-          <li><code class="language-js">arr.push(item)</code></li>
-          <li><code class="language-js">arr.unshift(item)</code></li>
-          <li><code class="language-js">arr.pop()</code></li>
-          <li><code class="language-js">arr.shift()</code></li>
-          <li><code class="language-js">arr.reduce(cb)</code></li>
-          <li><code class="language-js">arr.reverse()</code></li>
-          <li><code class="language-js">arr.sort()</code></li>
-          <li><code class="language-js">arr.slice(start, end)</code></li>
-          <li><code class="language-js">arr.splice(start, deleteCount, items)</code></li>
-          <li><code class="language-js">Array.from(iterable[, cb])</code></li>
+          <li><code class="custom">arr.length</code></li>
+          <li><code class="custom">arr.length = 0</code></li>
+          <li><code class="custom">arr2 = [...arr1]</code></li>
+          <li><code class="custom">arr[i]</code></li>
+          <li><code class="custom">arr.join(sep)</code></li>
+          <li><code class="custom">arr1.concat(arr2)</code></li>
+          <li><code class="custom">arr.every(boolean test)</code></li>
+          <li><code class="custom">arr.some(boolean test)</code></li>
+          <li><code class="custom">arr.filter(cb)</code></li>
+          <li><code class="custom">arr.find(cb)</code></li>
+          <li><code class="custom">arr.findIndex(boolean test)</code></li>
+          <li><code class="custom">arr.includes(item)</code></li>
+          <li><code class="custom">arr.indexOf(item)</code></li>
+          <li><code class="custom">arr.forEach((item, i))</code></li>
+          <li><code class="custom">arr.map((item, i))</code></li>
+          <li><code class="custom">arr.push(item)</code></li>
+          <li><code class="custom">arr.unshift(item)</code></li>
+          <li><code class="custom">arr.pop()</code></li>
+          <li><code class="custom">arr.shift()</code></li>
+          <li><code class="custom">arr.reduce(cb)</code></li>
+          <li><code class="custom">arr.reverse()</code></li>
+          <li><code class="custom">arr.sort()</code></li>
+          <li><code class="custom">arr.slice(start, end)</code></li>
+          <li><code class="custom">arr.splice(start, deleteCount, items)</code></li>
+          <li><code class="custom">Array.from(iterable[, cb])</code></li>
         </ol>
-        <p>Others: toReversed, toSorted, <span class="red">destructuring</span></p>
+        <p>Others: toReversed, toSorted, <span class="red">destructuring</span>, <code>arr1.push(...arr2)</code></p>
       </div>
       <div class="secondary">
         <h2>PHP</h2>
         <h3>Array functions</h3>
         <!-- https://www.php.net/manual/en/ref.array.php -->
         <ol>
-          <li><code class="language-php">count($arr)</code></li>
-          <li><code class="language-php">$arr = [];</code></li>
-          <li><code class="language-php">$arr2 = [...$arr1];</code></li>
-          <li><code class="language-php">$arr[i]</code></li>
-          <li><code class="language-php">implode($sep, $arr)</code></li>
-          <li><code class="language-php">array_merge($arr1, $arr2)</code></li>
+          <li><code class="custom">count($arr)</code></li>
+          <li><code class="custom">$arr = [];</code></li>
+          <li><code class="custom">$arr2 = [...$arr1];</code></li>
+          <li><code class="custom">$arr[i]</code></li>
+          <li><code class="custom">implode($sep, $arr)</code></li>
+          <li><code class="custom">array_merge($arr1, $arr2)</code></li>
           <li>-</li>
           <li>-</li>
-          <li><code class="language-php">array_filter($arr, 'cb')</code></li>
+          <li><code class="custom">array_filter($arr, 'cb')</code></li>
           <li>-</li>
           <li>-</li>
-          <li><code class="language-php">in_array($item, $arr)</code></li>
-          <li><code class="language-php">array_search($item, $arr)</code></li>
-          <li><code class="language-php">foreach ($arr as $val) {...}</code></li>
-          <li><code class="language-php">array_map('cb', $arr)</code></li>
-          <li><code class="language-php">array_push($arr, 'vals')</code></li>
-          <li><code class="language-php">array_unshift($arr, 'vals')</code></li>
-          <li><code class="language-php">array_pop($arr)</code></li>
-          <li><code class="language-php">array_shift($arr)</code></li>
-          <li><code class="language-php">array_reduce($arr, 'cb')</code></li>
-          <li><code class="language-php">array_reverse($arr)</code></li>
-          <li><code class="language-php">sort($arr)</code></li>
-          <li><code class="language-php">array_slice($arr, start, len)</code></li>
-          <li><code class="language-php">array_splice($arr, start, len, items)</code></li>
+          <li><code class="custom">in_array($item, $arr)</code></li>
+          <li><code class="custom">array_search($item, $arr)</code></li>
+          <li><code class="custom">foreach ($arr as $val) {...}</code></li>
+          <li><code class="custom">array_map('cb', $arr)</code></li>
+          <li><code class="custom">array_push($arr, 'vals')</code></li>
+          <li><code class="custom">array_unshift($arr, 'vals')</code></li>
+          <li><code class="custom">array_pop($arr)</code></li>
+          <li><code class="custom">array_shift($arr)</code></li>
+          <li><code class="custom">array_reduce($arr, 'cb')</code></li>
+          <li><code class="custom">array_reverse($arr)</code></li>
+          <li><code class="custom">sort($arr)</code></li>
+          <li><code class="custom">array_slice($arr, start, len)</code></li>
+          <li><code class="custom">array_splice($arr, start, len, items)</code></li>
           <li>-</li>
         </ol>
         <p>Others: explode(), implode(), preg_split(), unset(), array_combine(keys, vals) to create an
-          assoc arr, alt to array_push: <code class="language-php">$arr[] = $item</code></p>
+          assoc arr, alt to array_push: <code class="custom">$arr[] = $item</code></p>
       </div>
       <div class="secondary">
         <h2>Python</h2>
         <h3>List methods</h3>
         <ol>
-          <li><code class="language-py">len(list_name)</code></li>
-          <li><code class="language-py">list_name.clear()</code></li>
-          <li><code class="language-py">list2 = list1.copy()</code></li>
-          <li><code class="language-py">list[i]</code></li>
-          <li><code class="language-py">sep.join(list_of_strings)</code></li>
-          <li><code class="language-py">list1 + list2</code></li>
-          <li><code class="language-py">all(cb(x) for x in list)</code></li>
-          <li><code class="language-py">any(cb(x) for x in list)</code></li>
-          <li><code class="language-py">[x for x in list if cb(x)]</code></li>
+          <li><code class="custom">len(list_name)</code></li>
+          <li><code class="custom">list_name.clear()</code></li>
+          <li><code class="custom">list2 = list1.copy()</code></li>
+          <li><code class="custom">list_name[i]</code></li>
+          <li><code class="custom">sep.join(list_of_strings)</code></li>
+          <li><code class="custom">list1 + list2</code></li>
+          <li><code class="custom">all(cb(x) for x in list1)</code></li>
+          <li><code class="custom">any(cb(x) for x in list1)</code></li>
+          <li><code class="custom">[x for x in list1 if cb(x)]</code></li>
           <li><!-- next((x for x in list if cb(x)), None) -->-</li>
           <li><!-- next((i for i,x in enumerate(list) if cb(x)), -1) -->-</li>
-          <li><code class="language-py">item in list</code></li>
-          <li><code class="language-py">list.find(item)</code></li>
+          <li><code class="custom">if item in list_name</code></li>
+          <li><code class="custom">list.find(item)</code></li>
           <li>-</li>
-          <li><code class="language-py">[cb(x) for x in list]</code></li>
-          <li><code class="language-py">list.append(val)</code></li>
-          <li><code class="language-py">list.insert(0, item)</code></li>
-          <li><code class="language-py">list.pop(i)</code></li>
-          <li><code class="language-py">list.pop(0)</code></li>
+          <li><code class="custom">[cb(x) for x in list]</code></li>
+          <li><code class="custom">list1.append(val)</code></li>
+          <li><code class="custom">list1.insert(0, item)</code></li>
+          <li><code class="custom">list1.pop(i)</code></li>
+          <li><code class="custom">lis1t.pop(0)</code></li>
           <li>-</li>
-          <li><code class="language-py">list.reverse()</code></li>
-          <li><code class="language-py">list.sort()</code></li>
-          <li><code class="language-py">list[start:end]</code></li>
-          <li><code class="language-py">list[start:end] = new_items</code></li>
-          <li><code class="language-py">list(iterable)</code></li>
+          <li><code class="custom">list1.reverse()</code></li>
+          <li><code class="custom">list1.sort()</code></li>
+          <li><code class="custom">list1[start:end]</code></li>
+          <li><code class="custom">list1[start:end] = new_items</code></li>
+          <li><code class="custom">list1(iterable)</code></li>
         </ol>
-        <p>Others: </p>
+        <p>Others: <code class="custom">list1.extend([arg1, arg2, ...])</code></p>
       </div>
     </div>
 
@@ -415,20 +424,20 @@
         <h2>JavaScript</h2>
         <h3>Objects</h3>
         <ol>
-          <li><code class="language-js">const obj = { key: val }</code></li>
-          <li><code class="language-js">obj.key | obj['key']</code></li>
-          <li><code class="language-js">obj.methodName()</code></li>
-          <li><code class="language-js">delete obj['key'];</code></li>
-          <li><code class="language-js">obj.hasOwnProperty(key);</code></li>
-          <li><code class="language-js">Object.entries(obj);</code></li>
-          <li><code class="language-js">Object.keys(obj);</code></li>
-          <li><code class="language-js">Object.values(obj);</code></li>
-          <li><code class="language-js">this;</code></li>
-          <li><code class="language-js">obj3 = {...obj1, ...obj2}</code></li>
-          <li><code class="language-js">obj = {}</code></li>
+          <li><code class="custom">const obj = { key: val }</code></li>
+          <li><code class="custom">obj.key | obj['key']</code></li>
+          <li><code class="custom">obj.methodName()</code></li>
+          <li><code class="custom">delete obj['key'];</code></li>
+          <li><code class="custom">obj.hasOwnProperty(key);</code></li>
+          <li><code class="custom">Object.entries(obj);</code></li>
+          <li><code class="custom">Object.keys(obj);</code></li>
+          <li><code class="custom">Object.values(obj);</code></li>
+          <li><code class="custom">this;</code></li>
+          <li><code class="custom">obj3 = {...obj1, ...obj2}</code></li>
+          <li><code class="custom">obj = {}</code></li>
         </ol>
-        <p>Others: <code class="language-js">this</code>, <code class="language-php">$this</code>, and <code
-            class="language-py">self</code>: refer to the current instance; they only apply within
+        <p>Others: <code class="custom">this</code>, <code class="custom">$this</code>, and <code
+            class="custom">self</code>: refer to the current instance; they only apply within
           class-based code; behave
           differently across languages</p>
       </div>
@@ -436,17 +445,17 @@
         <h2>PHP</h2>
         <h3>Associative arrays</h3>
         <ol>
-          <li><code class="language-php">$obj = ['key' => $val];</code></li>
-          <li><code class="language-php">$obj['key'];</code></li>
-          <li><code class="language-php">$obj->methodName();</code></li>
-          <li><code class="language-php">unset($obj['key']);</code></li>
-          <li><code class="language-php">array_key_exists($key, $obj);</code></li>
+          <li><code class="custom">$obj = ['key' => $val];</code></li>
+          <li><code class="custom">$obj['key'];</code></li>
+          <li><code class="custom">$obj->methodName();</code></li>
+          <li><code class="custom">unset($obj['key']);</code></li>
+          <li><code class="custom">array_key_exists($key, $obj);</code></li>
           <li>-</li>
-          <li><code class="language-php">array_keys($obj);</code></li>
-          <li><code class="language-php">array_values($obj);</code></li>
-          <li><code class="language-php">$this;</code></li>
-          <li><code class="language-php">$arr3 = [...$arr1, ...$arr2];</code></li>
-          <li><code class="language-php">$arr = [];</code></li>
+          <li><code class="custom">array_keys($obj);</code></li>
+          <li><code class="custom">array_values($obj);</code></li>
+          <li><code class="custom">$this;</code></li>
+          <li><code class="custom">$arr3 = [...$arr1, ...$arr2];</code></li>
+          <li><code class="custom">$arr = [];</code></li>
         </ol>
         <p>Others: </p>
       </div>
@@ -454,17 +463,17 @@
         <h2>Python</h2>
         <h3>Dictionaries</h3>
         <ol>
-          <li><code class="language-py">dict = {'key': val}</code></li>
-          <li><code class="language-py">dict['key']</code></li>
-          <li><code class="language-py">dict.method_name()</code></li>
-          <li><code class="language-py">del dict['key']</code></li>
-          <li><code class="language-py">key in dict</code></li>
-          <li><code class="language-py">dict.items()</code></li>
-          <li><code class="language-py">dict.keys()</code></li>
-          <li><code class="language-py">dict.values()</code></li>
-          <li><code class="language-py">self</code></li>
-          <li><code class="language-py">dict3 = {**dict1, **dict2}</code></li>
-          <li><code class="language-py">dict1.clear()</code></li>
+          <li><code class="custom">dict = {'key': val}</code></li>
+          <li><code class="custom">dict['key']</code></li>
+          <li><code class="custom">dict.method_name()</code></li>
+          <li><code class="custom">del dict['key']</code></li>
+          <li><code class="custom">key in dict</code></li>
+          <li><code class="custom">dict.items()</code></li>
+          <li><code class="custom">dict.keys()</code></li>
+          <li><code class="custom">dict.values()</code></li>
+          <li><code class="custom">self</code></li>
+          <li><code class="custom">dict3 = {**dict1, **dict2}</code></li>
+          <li><code class="custom">dict1.clear()</code></li>
         </ol>
         <p>Others: </p>
       </div>
@@ -548,7 +557,7 @@ $compare ? $ifTrue : $ifFalse;
 true
 false
 $a && $b
-$a || $b
+$a || $b, xor
 !$x
 $x ?? $y</code>
         </pre>
