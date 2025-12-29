@@ -20,11 +20,13 @@ function initHomePage() {
     setLocalStorage('h1', 'Choose a primary language and at least 1 secondary language');
   } else {
     h1.textContent = getLocalStorage('h1');
+    // make the selected primary language be selected on page load
     const selectedIdx = Number(getLocalStorage('selection'))
     select.options[selectedIdx].selected = true;
 
     const langs = getLocalStorage('checkedLangs')
 
+    // check the secondary languages the user checked
     langs.forEach(val => {
       const checkbox = document.querySelector(`input[type="checkbox"][value="${val}"]`);
       if (checkbox) checkbox.checked = true;
@@ -44,22 +46,26 @@ document.addEventListener('DOMContentLoaded', initHomePage);
 languageForm.addEventListener('submit', e => {
   e.preventDefault();
 
+  // Get the text for the selected primary language - save to LS
   const selectedText = select.options[select.selectedIndex].text;
-  const selectedValue = select.value;
-  console.log(select.selectedIndex)
+  // const selectedValue = select.value;
   setLocalStorage('selection', select.selectedIndex)
-  console.log(selectedValue)
 
+  // Get the checked boxes and save to LS
   const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
   const checkedValues = [...checkedBoxes].map(box => box.value);
   setLocalStorage('checkedLangs', checkedValues)
 
+  // Set the h1 textContent for the user choices
   const values = [...checkedBoxes].map(box => box.value);
   const headingText = `Compare ${selectedText} to ${values.join(' and ')}`;
 
+  // Save the heading text to LS
   setLocalStorage('h1', headingText)
   h1.textContent = getLocalStorage('h1');
 
-  // I need to keep the primary language selected, and the secondary languages checked
+  // Now I need to add the page content
+
+
   console.dir(e.target);
 })

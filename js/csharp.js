@@ -1,4 +1,4 @@
-const pythonVariables = [
+const csharpVariables = [
   '-',
   '-',
   '',
