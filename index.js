@@ -36,8 +36,8 @@ function initHomePage() {
   }
 }
 
-createSection('vars', 'Variables + Miscellaneous', 'ul')
-function createSection(sectionId, h3Text, tag) {
+
+function createSection(sectionId, h3Text) {
   const section = document.getElementById(sectionId)
   const primary = getLocalStorage('primary')
   const secondary = getLocalStorage('checkedLangs')
@@ -63,7 +63,7 @@ function createSection(sectionId, h3Text, tag) {
   section.append(grid)
   grid.append(primaryChild)
 
-  const list = document.createElement(tag);
+  const list = document.createElement('ol');
 
   primaryChild.append(h2, h3, list)
 
@@ -89,7 +89,7 @@ function createSection(sectionId, h3Text, tag) {
     section.append(grid)
     grid.append(secondaryChild)
 
-    const list = document.createElement(tag);
+    const list = document.createElement('ol');
 
     vars[lang].forEach(item => {
       const li = document.createElement('li')
@@ -102,7 +102,7 @@ function createSection(sectionId, h3Text, tag) {
     })
   })
 }
-
+createSection('vars', 'Variables + Miscellaneous')
 
 /**
  * * EVENT LISTENERS
