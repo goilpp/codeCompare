@@ -2,56 +2,32 @@
 // Each key = the value for input type="checkbox"
 // The selected languages values are saved to LS, but the Primary is saving the select option text value
 export const vars = {
-  JavaScript: [
+  "JavaScript": [
     'let varName = value;',
-    'const varName = value;',
     'const PHI = 1.618',
     'typeof',
     'console.log()',
-    '-',
-    'string',
-    'number',
-    'number',
-    'boolean',
     'null',
   ],
-  PHP: [
+  "PHP": [
     '$varName = value;',
-    '-',
     'define("PHI", 1.618);',
     'gettype()',
-    'echo',
     'var_dump()',
-    'string',
-    'int',
-    'float',
-    'bool',
     'null',
   ],
-  Python: [
+  "Python": [
     'var_name = value',
-    '-',
     'PHI = 1.618',
     'type()',
     'print()',
-    '-',
-    'str',
-    'int',
-    'float',
-    'bool',
     'None',
   ],
-  CSharp: [
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
-    '-',
+  "CSharp": [
+    'var varName = value;',
+    'const double PHI = 1.618;',
+    'obj.GetType()',
+    'Console.WriteLine(obj);',
+    'null',
   ],
 }

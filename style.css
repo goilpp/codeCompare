@@ -129,8 +129,17 @@ samp {
 code,
 pre {
   font-weight: 600;
-  color: #555;
+  color: #444;
+  font-size: 1.125rem;
 }
+
+/*  
+code {
+  color: #fefefe;
+  background-color: #444;
+  padding: 0 0.25em;
+}
+*/
 
 ol,
 .primary ul,
@@ -219,4 +228,8 @@ button {
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.red {
+  color: red;
 }

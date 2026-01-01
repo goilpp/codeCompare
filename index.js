@@ -1,4 +1,6 @@
 "use strict";
+import { vars } from "./js/vars.js";
+
 const languageForm = document.getElementById('languageForm');
 const select = document.getElementById('primaryLang');
 const h1 = document.querySelector('h1');
@@ -34,13 +36,71 @@ function initHomePage() {
   }
 }
 
+createSection('vars', 'Variables + Miscellaneous', 'ul')
 function createSection(sectionId, h3Text, tag) {
-  // 1. sectionId = surround each "section" tag with section#id
-  // 2. tag = ul, ol, or pre
-  // 3. if ol or ul also create li
-  // h2 = primary + [checkedLangs]
-  // h3 = h3Text
-  // Content - loop thru vars.js > sectionId
+  const section = document.getElementById(sectionId)
+  const primary = getLocalStorage('primary')
+  const secondary = getLocalStorage('checkedLangs')
+  const num = secondary.length + 1;
+  
+
+  /**
+   * * NOTE: THIS IS HORRIBLE - REFACTOR BUT IT WORKS! 
+   */
+
+  const grid = document.createElement('div');
+  grid.className = `grid-${num}`
+
+  const primaryChild = document.createElement('div');
+  primaryChild.className = 'primary';
+
+  const h2 = document.createElement('h2');
+  h2.textContent = primary;
+
+  const h3 = document.createElement('h3');
+  h3.textContent = h3Text;
+
+  section.append(grid)
+  grid.append(primaryChild)
+
+  const list = document.createElement(tag);
+
+  primaryChild.append(h2, h3, list)
+
+  vars[primary].forEach(item => {
+    const li = document.createElement('li')
+    const code = document.createElement('code')
+    code.className = `custom-${primary.toLowerCase()}`
+    code.textContent = item;
+    li.append(code)
+    list.append(li)
+  })
+
+  secondary.forEach(lang => {
+    const secondaryChild = document.createElement('div');
+    secondaryChild.className = 'secondary';
+
+    const h2 = document.createElement('h2');
+    h2.textContent = lang;
+
+    const h3 = document.createElement('h3');
+    h3.textContent = h3Text;
+
+    section.append(grid)
+    grid.append(secondaryChild)
+
+    const list = document.createElement(tag);
+
+    vars[lang].forEach(item => {
+      const li = document.createElement('li')
+      const code = document.createElement('code')
+      code.className = `custom-${primary.toLowerCase()}`
+      code.textContent = item;
+      li.append(code)
+      list.append(li)
+      secondaryChild.append(h2, h3, list)
+    })
+  })
 }
 
 
