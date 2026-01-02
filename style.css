@@ -70,7 +70,7 @@ body {
   color: var(--text);
   font-weight: 400;
   line-height: 1.4;
-  background-color: hsl(210, 80%, 97%);
+  background-color: hsl(210, 80%, 96%);
 }
 
 /* main {
@@ -165,17 +165,36 @@ ol,
   gap: 1rem;
 }
 
-.grid-3 {
+.grid-2, .grid-3, .grid-4 {
   display: grid;
-
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.grid-3 > * {
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.grid-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.grid-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-2 > *{
+  border: 1px solid #888;
+  padding: 1rem 4rem; 
+  /* width: 75%; */
+}
+.grid-3 > *, .grid-4 > * {
   border: 1px solid #888;
   padding: 1rem;
+}
+
+.primary, .secondary {
+  background-color: hsl(210, 80%, 99%);
 }
 
 /* Home page form */

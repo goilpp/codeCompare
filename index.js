@@ -1,5 +1,5 @@
 "use strict";
-import { vars } from "./js/vars.js";
+import { vars, numbers, strings, arrays, objects } from "./js/listEls.js";
 
 const languageForm = document.getElementById('languageForm');
 const select = document.getElementById('primaryLang');
@@ -8,6 +8,7 @@ const h1 = document.querySelector('h1');
 /**
  * * FUNCTIONS
  */
+// set local storage for primary & secondary languages, and for H1 text
 function setLocalStorage(key, val) {
 	return localStorage.setItem(key, JSON.stringify(val));
 }
@@ -16,6 +17,7 @@ function getLocalStorage(key) {
 	return JSON.parse(localStorage.getItem(key));
 }
 
+// On page visit
 function initHomePage() {
   const h1Text = getLocalStorage('h1');
   if (!h1Text) {
@@ -23,86 +25,75 @@ function initHomePage() {
   } else {
     h1.textContent = getLocalStorage('h1');
     // make the selected primary language be selected on page load
-    const selectedIdx = Number(getLocalStorage('selection'))
+    const selectedIdx = Number(getLocalStorage('selection'));
     select.options[selectedIdx].selected = true;
 
-    const langs = getLocalStorage('checkedLangs')
+    const langs = getLocalStorage('checkedLangs');
 
     // check the secondary languages the user checked
     langs.forEach(val => {
       const checkbox = document.querySelector(`input[type="checkbox"][value="${val}"]`);
       if (checkbox) checkbox.checked = true;
     });
+
+    createLiSection(vars, 'vars', 'Variables + Miscellaneous');
+    createLiSection(numbers, 'numbers', 'Numbers');
+    createLiSection(strings, 'strings', 'Strings');
+    createLiSection(arrays, 'arrays', 'Arrays');
+    createLiSection(objects, 'objects', 'Objects');
   }
 }
 
+// for the 5 ol > li sections
+function createLiSection(obj, sectionId, h3Text) {
+  const section = document.getElementById(sectionId);
+  section.textContent = '';
 
-function createSection(sectionId, h3Text) {
-  const section = document.getElementById(sectionId)
-  const primary = getLocalStorage('primary')
-  const secondary = getLocalStorage('checkedLangs')
+  const primary = getLocalStorage('primary');
+  const secondary = getLocalStorage('checkedLangs');
   const num = secondary.length + 1;
-  
-
-  /**
-   * * NOTE: THIS IS HORRIBLE - REFACTOR BUT IT WORKS! 
-   */
 
   const grid = document.createElement('div');
-  grid.className = `grid-${num}`
+  grid.className = `grid-${num}`;
 
   const primaryChild = document.createElement('div');
   primaryChild.className = 'primary';
 
-  const h2 = document.createElement('h2');
-  h2.textContent = primary;
-
-  const h3 = document.createElement('h3');
-  h3.textContent = h3Text;
-
-  section.append(grid)
-  grid.append(primaryChild)
-
-  const list = document.createElement('ol');
-
-  primaryChild.append(h2, h3, list)
-
-  vars[primary].forEach(item => {
-    const li = document.createElement('li')
-    const code = document.createElement('code')
-    code.className = `custom-${primary.toLowerCase()}`
-    code.textContent = item;
-    li.append(code)
-    list.append(li)
-  })
+  languageListItems(obj, primary, h3Text, section, grid, primaryChild);
 
   secondary.forEach(lang => {
     const secondaryChild = document.createElement('div');
     secondaryChild.className = 'secondary';
 
-    const h2 = document.createElement('h2');
-    h2.textContent = lang;
-
-    const h3 = document.createElement('h3');
-    h3.textContent = h3Text;
-
-    section.append(grid)
-    grid.append(secondaryChild)
-
-    const list = document.createElement('ol');
-
-    vars[lang].forEach(item => {
-      const li = document.createElement('li')
-      const code = document.createElement('code')
-      code.className = `custom-${primary.toLowerCase()}`
-      code.textContent = item;
-      li.append(code)
-      list.append(li)
-      secondaryChild.append(h2, h3, list)
-    })
+    languageListItems(obj, lang, h3Text, section, grid, secondaryChild);
   })
 }
-createSection('vars', 'Variables + Miscellaneous')
+
+// HELPER function: used in createLiSection
+function languageListItems(obj, string, text, el1, el2, el3) {
+  const h2 = document.createElement('h2');
+  h2.textContent = string;
+
+  const h3 = document.createElement('h3');
+  h3.textContent = text;
+
+  el1.append(el2);
+  el2.append(el3);
+
+  const list = document.createElement('ol');
+
+  el3.append(h2, h3, list);
+
+  obj[string].forEach(item => {
+    const li = document.createElement('li');
+    const code = document.createElement('code');
+    code.className = `custom-${string.toLowerCase()}`;
+    code.textContent = item;
+    li.append(code);
+    list.append(li);
+  })
+}
+
 
 /**
  * * EVENT LISTENERS
@@ -113,6 +104,10 @@ document.addEventListener('DOMContentLoaded', initHomePage);
 
 // Select list 
 select.addEventListener('change', e => {
+  const checkedLanguages = getLocalStorage('checkedLangs') || []
+  if (checkedLanguages.length > 0) {
+    setLocalStorage('checkedLangs', [])
+  }
   const selectedvalue = select.options[select.selectedIndex].value;
   console.log(selectedvalue)
 
@@ -123,16 +118,17 @@ select.addEventListener('change', e => {
   const primarySelection = [...boxes].filter(box => box.id === selectedvalue)
   console.log(primarySelection)
 
-  // I need to somehow maintain the disabled attribute and only remove it when the user picks a different primary language or clears LS
+  // I need to somehow maintain the disabled attribute and only remove it when the user picks a different primary language or clears LS - Or I have to do something else because it is remaining until you refresh the page
 })
 
 // 2. form listener
+// Why are my form listeners always so busy?
 languageForm.addEventListener('submit', e => {
   e.preventDefault();
-
+  
   // Get the text for the selected primary language - save to LS
   const selectedText = select.options[select.selectedIndex].text;
-  
+  console.log('selectedText: ', selectedText)
   setLocalStorage('selection', select.selectedIndex)
   setLocalStorage('primary', selectedText)
 
@@ -140,7 +136,9 @@ languageForm.addEventListener('submit', e => {
   
   const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
   
-  const checkedValues = [...checkedBoxes].map(box => box.value);
+  const checkedValues = [...checkedBoxes]
+    .filter(box => box.value !== selectedText)
+    .map(box => box.value);
   setLocalStorage('checkedLangs', checkedValues)
 
   // Set the h1 textContent for the user choices
@@ -151,8 +149,12 @@ languageForm.addEventListener('submit', e => {
   setLocalStorage('h1', headingText)
   h1.textContent = getLocalStorage('h1');
 
-  // Now I need to add the page content
-
+  // ol > li page content
+  createLiSection(vars, 'vars', 'Variables + Miscellaneous');
+  createLiSection(numbers, 'numbers', 'Numbers');
+  createLiSection(strings, 'strings', 'Strings');
+  createLiSection(arrays, 'arrays', 'Arrays');
+  createLiSection(objects, 'objects', 'Objects');
 
   console.dir(e.target);
 })
