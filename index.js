@@ -109,14 +109,12 @@ select.addEventListener('change', e => {
     setLocalStorage('checkedLangs', [])
   }
   const selectedvalue = select.options[select.selectedIndex].value;
-  console.log(selectedvalue)
+  console.log(selectedvalue) // this is correct
 
   const boxes = document.querySelectorAll('input[type="checkbox"]');
-  console.log(boxes)
 
   const disabled = [...boxes].filter(box => box.id === selectedvalue).map(box => box.disabled = true);
   const primarySelection = [...boxes].filter(box => box.id === selectedvalue)
-  console.log(primarySelection)
 
   // I need to somehow maintain the disabled attribute and only remove it when the user picks a different primary language or clears LS
 })
@@ -128,7 +126,8 @@ languageForm.addEventListener('submit', e => {
   
   // Get the text for the selected primary language - save to LS
   const selectedText = select.options[select.selectedIndex].text;
-  console.log('selectedText: ', selectedText)
+  console.log('selectedText: ', selectedText) 
+  // above is wrong! It is whatever was previously selected, not the user selection when they submit the form
   setLocalStorage('selection', select.selectedIndex)
   setLocalStorage('primary', selectedText)
 
@@ -154,6 +153,4 @@ languageForm.addEventListener('submit', e => {
   createLiSection(strings, 'strings', 'Strings');
   createLiSection(arrays, 'arrays', 'Arrays');
   createLiSection(objects, 'objects', 'Objects');
-
-  console.dir(e.target);
 })
