@@ -6,8 +6,8 @@ A learning tool for developers to compare syntax across programming languages us
 
 The Code Comparison Project is an interactive website that helps users learn a new programming language by comparing it to a language they already know. Using `<code>` and `<pre>` tags along with Prism.js for syntax highlighting, the site allows users to visually scan differences and similarities between languages.
 
-> **_Note (as of 12/27/2025)_**:
-> _The HTML content for this project is currently hard-coded. This version is primarily focused on layout and styling. Dynamic generation of code sections and comparisons will be added later using JavaScript and data files (such as JSON). Anyone reviewing the project at this stage will see the visual design but not the full functionality._
+> **_Note (as of 1/1/2026)_**:
+> _The HTML content for this project is currently being added. This version is primarily focused on layout and styling. Dynamic generation of code sections and comparisons will be added later using JavaScript and data files. Anyone reviewing the project at this stage will see the visual design but not the full functionality. The list items sections are now dynamic, the `pre` tag sections are WIP._
 
 ## Features
 
@@ -21,6 +21,7 @@ The Code Comparison Project is an interactive website that helps users learn a n
   - Conditionals
   - Loops
   - Functions
+  - Classes
 - Inline `<code>` tags for simple methods or functions.
 - `<pre>` + `<code>` blocks for structural code (loops, conditionals, function declarations) to maintain line alignment.
 - Notes section below each list highlights important or unique language-specific features.
@@ -51,6 +52,8 @@ The Code Comparison Project is an interactive website that helps users learn a n
 - Inline code uses `<code>` elements; multi-line blocks use `<pre><code>` for proper formatting.
 - Only `<` and `&` need escaping when rendering dynamic code blocks. Quotes and > are safe in text nodes.
 - Default light background ensures readability with Prism’s dark inline code backgrounds.
+- All `code` blocks use the class `class="language-xxxx"` syntax.
+- List items sections have the Prism.js classes removed for easier reading.
 
 ## Contributing
 
