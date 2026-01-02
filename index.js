@@ -118,7 +118,7 @@ select.addEventListener('change', e => {
   const primarySelection = [...boxes].filter(box => box.id === selectedvalue)
   console.log(primarySelection)
 
-  // I need to somehow maintain the disabled attribute and only remove it when the user picks a different primary language or clears LS - Or I have to do something else because it is remaining until you refresh the page
+  // I need to somehow maintain the disabled attribute and only remove it when the user picks a different primary language or clears LS
 })
 
 // 2. form listener
@@ -142,8 +142,7 @@ languageForm.addEventListener('submit', e => {
   setLocalStorage('checkedLangs', checkedValues)
 
   // Set the h1 textContent for the user choices
-  const values = [...checkedBoxes].map(box => box.value);
-  const headingText = `Compare ${selectedText} to ${values.join(' and ')}`;
+  const headingText = `Compare ${selectedText} to ${checkedValues.join(' and ')}`;
 
   // Save the heading text to LS
   setLocalStorage('h1', headingText)
