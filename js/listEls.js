@@ -2,80 +2,80 @@
 // Each key = the value for input type="checkbox"
 // The selected languages values are saved to LS, but the Primary is saving the select option text value
 // This is a bad file name
-export const vars = {
+const vars = {
   "JavaScript": [
     'let varName = value;',
     'const PHI = 1.618',
     'typeof',
-    'console.log()',
     'null',
-    '// single line',
-    '/* multi-line */',
-    '==, !=, ===, !==',
     'true, false',
+    '==, !=, ===, !==',
     'a && b',
     'a || b',
     '!x',
+    'console.log()',
+    '// single line',
+    '/* multi-line */',
   ],
   "PHP": [
     '$varName = value;',
     'define("PHI", 1.618);',
-    'gettype()',
     'echo',
     'null',
-    '// single line',
-    '/* multi-line */',
-    '==, !=, ===, !==',
     'true, false',
+    '==, !=, ===, !==',
     '$a && $b',
     '$a || $b',
     '!$x',
+    'gettype()',
+    '// single line',
+    '/* multi-line */',
   ],
   "Python": [
     'var_name = value',
     'PHI = 1.618',
-    'type()',
     'print()',
     'None',
-    '# single line',
-    '""" multi-line """',
-    '==, !=',
     'True, False',
+    '==, !=',
     'a and b',
     'a or b',
     'not x',
+    'type()',
+    '# single line',
+    '""" multi-line """',
   ],
   "CSharp": [
     'var varName = value;',
     'const double PHI = 1.618;',
-    'obj.GetType()',
     'Console.WriteLine(obj);',
     'null',
-    '// single line',
-    '/* multi-line */',
-    '==, !=',
     'true, false',
+    '==, !=',
     'a && b',
     'a || b',
     '!x',
+    'obj.GetType()',
+    '// single line',
+    '/* multi-line */',
   ],
   "Dart": [
     'var varName = value;',
     'final PHI = 1.618;',
     'varName.runtimeType',
-    'print()',
     'null',
-    '// single line',
-    '/* multi-line */',
-    '==, !=',
     'true, false',
+    '==, !=',
     'a && b',
     'a || b',
     '!x',
+    'print()',
+    '// single line',
+    '/* multi-line */',
   ],
 }
 
-export const numbers = {
+const numbers = {
   "JavaScript": [
     'Infinity',
     'NaN',
@@ -153,7 +153,7 @@ export const numbers = {
   ],
 }
 
-export const strings = {
+const strings = {
   "JavaScript": [
     '`Hello ${name}`',
     'str.length',
@@ -203,10 +203,10 @@ export const strings = {
     'string + string2',
     '+=',
     'ord(char)',
-    'txt.startswith(char_or_substr)',
-    'txt.endswith(char_or_substr)',
+    'txt.startswith(substr)',
+    'txt.endswith(substr)',
     'if char in string',
-    'txt.find(char_or_substr)',
+    'txt.find(substr)',
     'string[start:end]',
     'string.split(sep)',
     'str * num',
@@ -261,7 +261,7 @@ export const strings = {
   ],
 }
 
-export const arrays = {
+const arrays = {
   "JavaScript": [
     'arr.length',
     'arr.length = 0',
@@ -323,11 +323,11 @@ export const arrays = {
     'list1[i]',
     'sep.join(strings_list)',
     'list1 + list2',
-    '[x for x in list1 if cb(x)]',
+    '[x for x in list1 if x expr]',
     'if item in list_name',
     'list1.index(item)',
     '-',
-    '[cb(x) for x in list]',
+    '[x expr for x in list1]',
     'list1.append(val)',
     'list1.insert(0, item)',
     'list1.pop(i)',
@@ -399,7 +399,7 @@ export const arrays = {
   ],
 }
 
-export const objects = {
+const objects = {
   "JavaScript": [
     'const obj = { key: val };',
     'obj.key; | obj["key"];',
@@ -458,7 +458,7 @@ export const objects = {
 }
 
 // This one needs work
-export const uniques = {
+const uniques = {
   "JavaScript": [
     'console.dir',
     'Number(str)',

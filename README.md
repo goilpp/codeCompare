@@ -53,7 +53,8 @@ The Code Comparison Project is an interactive website that helps users learn a n
 - Only `<` and `&` need escaping when rendering dynamic code blocks. Quotes and > are safe in text nodes.
 - Default light background ensures readability with Prism’s dark inline code backgrounds.
 - All `code` blocks use the class `class="language-xxxx"` syntax.
-- List items sections have the Prism.js classes removed for easier reading.
+- The Prism.js classes have been removed for list items sections for easier reading.
+- If you add or remove languages from either the primary select list or the secondary check boxes, make sure to duplicate that in the other option. Every primary language should have an associated checkbox AND in the same order, and vice versa.
 
 ## Contributing
 

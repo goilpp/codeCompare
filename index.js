@@ -1,5 +1,5 @@
 "use strict";
-import { vars, numbers, strings, arrays, objects } from "./js/listEls.js";
+// import { vars, numbers, strings, arrays, objects } from "./js/listEls.js";
 
 const languageForm = document.getElementById('languageForm');
 const select = document.getElementById('primaryLang');
@@ -41,6 +41,11 @@ function initHomePage() {
     createLiSection(strings, 'strings', 'Strings');
     createLiSection(arrays, 'arrays', 'Arrays');
     createLiSection(objects, 'objects', 'Objects');
+
+    createLiSection(conditionals, 'conditionals', 'Conditionals');
+    createLiSection(loops, 'loops', 'Loops');
+    createLiSection(functions, 'functions', 'Functions');
+    createLiSection(classes, 'classes', 'Classes');
   }
 }
 
@@ -49,7 +54,7 @@ function createLiSection(obj, sectionId, h3Text) {
   const section = document.getElementById(sectionId);
   section.textContent = '';
 
-  const primary = getLocalStorage('primary');
+  const primary = getLocalStorage('primary'); // this line is bad for C#
   const secondary = getLocalStorage('checkedLangs');
   const num = secondary.length + 1;
 
@@ -62,6 +67,7 @@ function createLiSection(obj, sectionId, h3Text) {
   languageListItems(obj, primary, h3Text, section, grid, primaryChild);
 
   secondary.forEach(lang => {
+    console.log(lang)
     const secondaryChild = document.createElement('div');
     secondaryChild.className = 'secondary';
 
@@ -80,18 +86,39 @@ function languageListItems(obj, string, text, el1, el2, el3) {
   el1.append(el2);
   el2.append(el3);
 
-  const list = document.createElement('ol');
+  const preTagConcepts = [conditionals, loops, functions, classes];
+  // The difference starts here with the list items
+  // I need pre
+  if (!preTagConcepts.includes(obj)) {
+    const list = document.createElement('ol');
+  
+    el3.append(h2, h3, list);
+  
+    // Friggin C#/CSharp/csharp - total nightmare
+    obj[string].forEach(item => {
+      const li = document.createElement('li');
+      const code = document.createElement('code');
+      code.className = `custom-${string.toLowerCase()}`;
+      code.textContent = item;
+      li.append(code);
+      list.append(li);
+    })
+  } else {
+    const pre = document.createElement('pre');
+    pre.className = `language-${string.toLowerCase()}`;
 
-  el3.append(h2, h3, list);
-
-  obj[string].forEach(item => {
-    const li = document.createElement('li');
+    pre.tabIndex = 0
+    el3.append(h2, h3, pre);
     const code = document.createElement('code');
-    code.className = `custom-${string.toLowerCase()}`;
-    code.textContent = item;
-    li.append(code);
-    list.append(li);
-  })
+    if (string === 'Dart') {
+      code.className = `language-javascript`;
+    } else {
+      code.className = `language-${string.toLowerCase()}`;
+    }
+    // code.textContent = obj[string];
+    code.textContent = obj[string][0];
+    pre.append(code);
+  }
 }
 
 
@@ -110,6 +137,7 @@ select.addEventListener('change', e => {
   }
   const selectedvalue = select.options[select.selectedIndex].value;
   console.log(selectedvalue) // this is correct
+  setLocalStorage('selected-primary', selectedvalue)
 
   const boxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -151,6 +179,16 @@ languageForm.addEventListener('submit', e => {
   createLiSection(vars, 'vars', 'Variables + Miscellaneous');
   createLiSection(numbers, 'numbers', 'Numbers');
   createLiSection(strings, 'strings', 'Strings');
+  /**
+   * The title 'Arrays' is a problem - some languages use 'Lists'
+   * The title 'Objects' is a problem - Associative arrrays, Dictionaries
+   * I need to change the way I update the h3 textContent
+   */
   createLiSection(arrays, 'arrays', 'Arrays');
   createLiSection(objects, 'objects', 'Objects');
+
+  createLiSection(conditionals, 'conditionals', 'Conditionals');
+  createLiSection(loops, 'loops', 'Loops');
+  createLiSection(functions, 'functions', 'Functions');
+  createLiSection(classes, 'classes', 'Classes');
 })
