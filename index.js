@@ -67,7 +67,6 @@ function createLiSection(obj, sectionId, h3Text) {
   languageListItems(obj, primary, h3Text, section, grid, primaryChild);
 
   secondary.forEach(lang => {
-    console.log(lang)
     const secondaryChild = document.createElement('div');
     secondaryChild.className = 'secondary';
 
