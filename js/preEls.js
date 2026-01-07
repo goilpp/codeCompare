@@ -162,7 +162,7 @@ for (let key in obj) {
 }
 
 let num = 0;
-while (num &lt; max) {
+while (num < max) {
   // code
   num++
 }
@@ -186,7 +186,7 @@ foreach ($obj as $key => $val) {
 }
 
 $num = 0;
-while ($num &lt; $max) { 
+while ($num < $max) { 
   // code 
   $num++; 
 }
@@ -210,7 +210,7 @@ for key, val in dict1.items():
   # code
 
 num = 0
-while num &lt; max: 
+while num < max: 
   # code 
   num += 1
 
